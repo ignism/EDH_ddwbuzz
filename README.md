@@ -1,4 +1,4 @@
-# getthebuzz
+# ddw.buzz
 
 > A Vue.js project
 
