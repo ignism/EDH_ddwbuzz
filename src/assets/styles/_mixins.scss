@@ -1,0 +1,14 @@
+@mixin block($w, $h:"") {
+    width: calc( #{$w} - 5px );
+    margin-left: 5px;
+    max-height: 595px;
+    overflow: hidden;
+    @if $h != "" {
+        //padding-bottom: $h;
+        height: calc( #{$h} - 5px );
+    } @else {
+        //padding-bottom: $w;
+        height: 33.333vw;
+    }
+}
+

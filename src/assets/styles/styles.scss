@@ -1,0 +1,31 @@
+@import "fonts";
+
+@import "variables";
+@import "mixins";
+
+@import "loader";
+@import "buttons";
+@import "menu";
+@import "masonry";
+@import "post-block";
+@import "post-detail";
+
+.container {
+    width: 100%;
+    max-width: 1800px;
+    min-height: calc(100% + 10px);
+    background: white;
+    margin: 0 auto;
+}
+
+@media (max-width : 468px) {
+/* Styles */
+}
+
+@media (max-width : 768px) {
+/* Styles */
+}
+
+@media (max-width : 1024px) {
+/* Styles */
+}

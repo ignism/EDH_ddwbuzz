@@ -1,0 +1,136 @@
+// .post-detail {
+//     position: relative;
+//     overflow: hidden;
+//     padding-bottom: 0;
+//     height: 0;
+//     opacity: 0;
+//     transition: all 800ms ease;
+// }
+// .post-detail.active {
+//     opacity: 1;
+//     height: auto;
+//     padding-bottom: 60px;
+// }
+.active-post {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 800ms ease;
+}
+
+.active-post.active {
+    height: auto;
+    opacity: 1;
+    min-height: 100vh;
+}
+
+.post-detail {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: calc(100vh - 60px);
+    opacity: 1;
+    transition: all 800ms ease;
+}
+
+.post-detail__media {
+    position: relative;
+}
+
+
+.post-detail__content>* {
+    width: 100%;
+}
+
+.post-detail__header {
+    margin: 30px 0 30px 0;
+}
+
+.post-detail__text {
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #151515;
+    letter-spacing: 0.52px;
+    line-height: 24px;
+    padding-top: 60px;
+    padding-right: 60px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.post-detail__text--large {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.post-detail__source {
+    position: relative;
+    margin-top: 60px;
+}
+
+#post-detail__image {
+    height: 60vw;
+    max-height: 1080px;
+    background-size: cover;
+}
+
+@media screen and (max-width: 639px) {
+    .post-detail__media {
+        width: 100%;
+    }
+
+    .post-detail__header {
+        margin: 10px 0 10px 0;
+    }
+
+    
+    .post-detail__text {
+        width: calc(100% - 40px);
+        padding: 20px;
+        position: relative;
+    }
+
+    .post-detail__text--large {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .post-detail__content {
+        padding: 0;
+    }
+    .source-link {
+        position: relative;
+    }
+
+    #post-detail__image {
+        min-height: 100vw;
+        background-position: center;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .post-detail__media {
+        width: 60%;
+    }
+    .post-detail__text {
+        width: calc(40% - 100px);
+        position: absolute;
+    }
+    .post-detail__content {
+        padding: 0;
+    }
+    .source-link {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .post-detail__text--large {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,129 @@
+.timestamp {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 9px 11px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.user {
+    /* DDW NEWS: */
+    color: #FFFFFF;
+    padding: 9px 11px;
+    background: $green;
+    clear: both;
+    float: left;
+    border-radius: 2px;
+}
+
+.text,
+.text--light,
+.title {
+    clear: both;
+    float: left;
+    margin-top: 12px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
+}
+
+.item--small .post__content {
+  width: calc(33.3333vw - 5px);
+}
+.item--medium .post__content {
+  width: calc(66.6666vw - 5px);
+}
+.item--big .post__content {
+  width: calc(50vw - 5px);
+}
+
+.post__content {
+    position: absolute;
+    height: 33.3333vw;
+    max-height: 595px;
+    overflow: hidden;
+    margin: 0;
+    background-size: cover !important;
+    background-position: center;
+    /* prepare animation */
+    margin-top: 0;
+    opacity: 0;
+    animation: 600ms cubic-bezier(0.23, 1, 0.32, 1) forwards slidein;
+
+    .gradient {
+        padding: 24px;
+        position: relative;
+        height: calc(100% - 48px);
+        width: calc(100% - 48px);
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0));
+
+        &:hover {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05));
+        }
+    }
+}
+
+@media (max-width: 639px) {
+  .item--small .post__content {
+    width: calc(100vw - 5px);
+    height: calc(100vw - 5px);
+  }
+  .item--medium .post__content {
+    width: calc(100vw - 5px);
+    height: calc(100vw - 5px);
+  }
+  .item--big .post__content {
+    width: calc(100vw - 5px);
+    height: calc(100vw - 5px);
+  }
+}
+
+
+.header-items .post__content {
+    margin-top: 0;
+}
+
+.post__media {}
+
+.post__media-container {
+    overflow: hidden;
+}
+
+.background-pattern {
+    &-01 {
+        background-image: url('../png/pattern01.png');
+    }
+    &-02 {
+        background-image: url('../png/pattern02.png');
+    }
+    &-03 {
+        background-image: url('../png/pattern03.png');
+    }
+    &-04 {
+        background-image: url('../png/pattern04.png');
+    }
+    &-05 {
+        background-image: url('../png/pattern05.png');
+    }
+    &-06 {
+        background-image: url('../png/pattern06.png');
+    }
+    &-07 {
+        background-image: url('../png/pattern07.png');
+    }
+    &-08 {
+        background-image: url('../png/pattern08.png');
+    }
+}
+
+@keyframes slidein {
+    from {
+        margin-top: 120px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}

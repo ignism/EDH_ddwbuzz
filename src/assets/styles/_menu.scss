@@ -1,0 +1,121 @@
+.menu-back {
+    background: $green;
+    width: $burger-width;
+    height: $burger-height;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: +2;
+}
+.menu-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: +2;
+    background: $green;
+    width: $burger-width;
+    height: $burger-height;
+    .bar,
+    .bar:after,
+    .bar:before {
+        width: $bar-width;
+        height: $bar-height;
+    }
+    .bar {
+        position: relative;
+        margin: 15px auto;
+        transform: translateY($bar-spacing);
+        background: rgba(255, 255, 255, 1);
+        transition: all 0ms 300ms;
+    }
+    .bar:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: $bar-spacing;
+        background: rgba(255, 255, 255, 1);
+        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .bar:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: $bar-spacing;
+        background: rgba(255, 255, 255, 1);
+        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &.active {
+        .bar {
+            background: rgba(255, 255, 255, 0);
+        }
+        .bar:after {
+            top: 0;
+            transform: rotate(45deg);
+            transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .bar:before {
+            bottom: 0;
+            transform: rotate(-45deg);
+            transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    }
+}
+
+.menu-dropdown {
+    position: absolute;
+    right: 0;
+    top: -1600px;
+    width: 580px;
+    padding-top: 120px;
+    max-width: 100%;
+    background: $green;
+    z-index: -1;
+    color: white;
+    opacity: 0;
+    transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+    min-height: 500px;
+    max-height: 500px;
+}
+
+.menu-dropdown.active {
+    opacity: 1;
+    top: 0;
+    z-index: +1;
+    transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+}
+
+
+.button-wrapper {
+    margin: 48px auto 64px auto;
+    width: 320px;
+    height: 48px;
+    .button:first-child {
+        margin-right: 28px;
+    }
+}
+
+.menu-header {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: bold;
+    color: #151515;
+    letter-spacing: 0.88px;
+    line-height: 37.6px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 36px;
+    span {
+        border-bottom: 5px solid #151515;
+    }
+}

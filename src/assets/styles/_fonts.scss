@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600');
+*,
+html,
+body {
+    font-family: 'Patron', 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Patron', 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+@media (max-width: 639px) {
+    .timestamp {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+    }
+    
+    .user {
+        font-family: 'Patron';
+        font-size: 12px;
+        letter-spacing: 0.08em;
+    }
+    
+    .text,
+    .title,
+    .text--light {
+        font-family: 'Patron';
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.46px;
+        line-height: 20px;
+        max-height: 80px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 959px) {
+    .timestamp {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+    }
+    
+    .user {
+        font-family: 'Patron';
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        line-height: 18px;
+    }
+    
+    .text,
+    .title {
+        font-family: 'Patron';
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.46px;
+        line-height: 24px;
+        max-height: 96px;
+    }
+
+    .text--light {
+        font-family: 'Patron';
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0.46px;
+        line-height: 18px;
+    }
+}
+
+@media (min-width: 960px) {
+    .timestamp {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+    }
+    
+    .user {
+        font-family: 'Patron';
+        font-size: 16px;
+        letter-spacing: 0.08em;
+    }
+    
+    .text,
+    .title {
+        font-family: 'Patron';
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.46px;
+        line-height: 28px;
+        max-height: 112px;
+    }
+
+    .text--light {
+        font-family: 'Patron';
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.46px;
+        line-height: 24px;
+    }
+}

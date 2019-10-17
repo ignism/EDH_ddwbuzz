@@ -1,0 +1,136 @@
+$blockSize: 1em;
+$delay: 100ms;
+$duration: $delay * 9;
+$blockMargin: $blockSize / 3;
+$loaderSize: $blockSize * 3 + $blockMargin * 2;
+
+@mixin animation-delay( $delay ) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+   transform: translate($x, $y);
+}
+
+@mixin animation( $ani1:null, $ani2:null ) {
+  @if ($ani2 != null) {
+    -webkit-animation: $ani1, $ani2;
+    animation: $ani1, $ani2;
+  }
+  
+  @else if ($ani1 != null) {
+    -webkit-animation: $ani1;
+    animation: $ani1;
+  }
+}
+
+body {
+  text-align: center;
+}
+
+.loader__container--top {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+
+.loader__container--bottom {
+    position: relative;
+    left: 50%;
+    height: 100px;
+}
+.pull-down-header {
+    background: white !important;
+}
+
+.pull-down-content--icon {
+    display: none !important;
+}
+
+.pull-down-content--label {
+    font-family: Montserrat;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #151515;
+    text-align: center;
+    margin-left: 0;
+}
+
+.pull-down-content {
+    position: fixed;
+    top: 20px;
+    border: 0;
+}
+
+
+#loader {
+    height: 100px;
+    margin-top: 100px;
+}
+
+.loader {
+  position: absolute;
+  width: $loaderSize;
+  height: $loaderSize;
+  margin-left: -$loaderSize/2;
+  margin-top: -$loaderSize/2;
+}
+
+.loader-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  background: #000;
+  width: $blockSize;
+  height: $blockSize;
+  @include animation(show $duration step-end infinite alternate,
+    show $duration linear infinite alternate);
+}
+
+.loader-block:nth-child(0) {
+  @include translate(0, 0);
+  @include animation-delay(0 * $delay);
+}
+
+.loader-block:nth-child(1) {
+  @include translate($blockSize + $blockMargin, 0);
+  @include animation-delay(1 * $delay);
+}
+
+.loader-block:nth-child(2) {
+  @include translate(($blockSize * 2) + ($blockMargin * 2), 0);
+  @include animation-delay(2 * $delay);
+}
+
+.loader-block:nth-child(3) {
+  width: $blockSize * 2 + $blockMargin;
+  @include translate(0, $blockSize + $blockMargin);
+  @include animation-delay(3 * $delay);
+}
+
+.loader-block:nth-child(4) {
+  @include translate(($blockSize * 2) + ($blockMargin * 2), $blockSize + $blockMargin);
+  @include animation-delay(4 * $delay);
+}
+
+.loader-block:nth-child(5) {
+  @include translate(0, ($blockSize * 2) + ($blockMargin * 2));
+  @include animation-delay(5 * $delay);
+}
+
+.loader-block:nth-child(6) {
+  width: $blockSize * 2 + $blockMargin;
+  @include translate($blockSize + $blockMargin, ($blockSize * 2) + ($blockMargin * 2));
+  @include animation-delay(6 * $delay);
+}
+
+@-webkit-keyframes show {
+  from, 40% { opacity: 0; }
+  41%, to { opacity: 1; }
+}
+
