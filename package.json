@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "locutus": "^2.0.10",
+    "locutus": "^2.0.12",
     "node-sass": "^4.12.0",
     "reset-css": "^2.2.1",
     "sass-loader": "^6.0.7",
